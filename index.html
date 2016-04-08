@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jeff Torres - Guessing Game</title>
+
+  </head>
+  <body>
+
+  </body>
+  <script type ="text/javascript">
+    confirm ("Click OK if you would like to play my guessing game.");
+    var answer = 7; //this is the answer for the guessing game
+    for (var i = 0; i <= 2; i++) {
+      console.log(i);
+      var guess = prompt ("I'm thinking of a number between 1 and 10. Please enter a guess");
+      if (guess != answer) {
+        console.log ("The user entered " + guess);
+        alert ("Sorry, you didn't guess the right number. Please try again.");
+      } else if (guess == answer) {
+          console.log ("The user entered " + guess);
+          alert ("Great guess! You got it!");
+          {break};
+        }
+      }
+    </script>
