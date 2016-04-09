@@ -61,6 +61,18 @@
                   uCase = q3.toUpperCase();
                 }
               alert("I know! Right?!? So crazy I wasn't snatched up sooner!");
+
+              var q4 = parseInt(prompt("Last question. I'm thinking of a number between 1 and 10. What number am I thinking of?"));
+              var answer = 7
+
+              while (q4 !== answer) {
+                if (q4 > answer) {
+                  q4 = parseInt(prompt("You guessed too high. Try again."));
+                } else if (q4 < answer) {
+                  q4 = parseInt(prompt("You guessed to low. Try again"));
+                }
+              }
+              alert("Great job! You guessed my number!");
         }
         else {
           alert("Awwwwwww, you're no fun.");
