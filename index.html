@@ -32,7 +32,24 @@
         var userName = prompt("What is your name?");
         alert("Ahoy there " + userName + "! Where be my booty?");
 
-        confirm("Just kidding! You don't owe me anything. Do you want to play a gussing game?");
+        var playGame = prompt("Just kidding, you don't owe me anything. Would you like to play a game, yes or no?");
+        var uCase = playGame.toUpperCase();
+        console.log(uCase);
+        if (uCase === "YES") {
+          var q1 = prompt("Great! Let's get started! Do you think I'm a cat man?");
+          uCase = q1.toUpperCase();
+          console.log(uCase);
+            if (uCase === "YES") {
+              alert("Damn right I am. And vicious little buggers they are. Never turn your back on them I say!");
+            }
+            else {
+              alert("HA! You obviously don't know the caliber of the man you're dealing with. Never trust a man without a cat.");
+            }
+        }
+        else {
+          alert("Awwwwwww, you're no fun.");
+        }
+
     </script>
   </body>
 </html>
