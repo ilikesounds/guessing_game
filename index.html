@@ -28,55 +28,6 @@
       <li><em>World Peace</em></li>
       <li><em>High Score on the Donkey Kong machine</em></li>
     </ul>
-    <script type="text/javascript">
-        var userName = prompt("What is your name?");
-        alert("Ahoy there " + userName + "! Where be my booty?");
-
-        var playGame = prompt("Just kidding, you don't owe me anything. Would you like to play a game, yes or no?");
-        var uCase = playGame.toUpperCase();
-        console.log(uCase);
-        if (uCase === "YES") {
-          var q1 = prompt("Great! Let's get started! Do you think I'm a cat man?");
-          uCase = q1.toUpperCase();
-          console.log(uCase);
-            if (uCase === "YES") {
-              alert("Damn right I am. And vicious little buggers they are. Never turn your back on them I say!");
-            }
-            else {
-              alert("HA! You obviously don't know the caliber of the man you're dealing with. Never trust a man without a cat.");
-            }
-
-            var q2 = prompt("Of my two favorite cardinal sins, which do you think is my most favorite? Gluttony or Sloth?");
-            uCase = q2.toUpperCase();
-            console.log(uCase);
-              if (uCase === "GLUTTONY" || "SLOTH") {
-                alert("Trick question! They go hand in hand. You can't have gluttony without sloth. I can't at least!");
-              }
-
-              var q3 = prompt("Given what you've learned about me so far, can you believe I didn't get married until I was 35?");
-              uCase = q3.toUpperCase();
-              console.log(uCase);
-                while (uCase === "YES") {
-                  var q3 = prompt("Very funny. Try again funny person. ");
-                  uCase = q3.toUpperCase();
-                }
-              alert("I know! Right?!? So crazy I wasn't snatched up sooner!");
-
-              var q4 = parseInt(prompt("Last question. I'm thinking of a number between 1 and 10. What number am I thinking of?"));
-              var answer = 7
-
-              while (q4 !== answer) {
-                if (q4 > answer) {
-                  q4 = parseInt(prompt("You guessed too high. Try again."));
-                } else if (q4 < answer) {
-                  q4 = parseInt(prompt("You guessed to low. Try again"));
-                }
-              }
-              alert("Great job! You guessed my number!");
-        }
-        else {
-          alert("Awwwwwww, you're no fun.");
-        }
-    </script>
+    <script src="app.js" type="text/javascript"></script>
   </body>
 </html>
