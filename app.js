@@ -1,20 +1,31 @@
+//This section defines the variables that will be assigned to the DOM elemnt placeholders in index.html
 var dlElOne = document.getElementById('q1');
 var dlElTwo = document.getElementById('q2');
 var dlElThree = document.getElementById('q3');
 var dlElFour = document.getElementById('q4');
+var dlElFive = document.getElementById('q5');
+var dlElSix = document.getElementById('q6');
 var ddElOne = document.getElementById('a1');
 var ddElTwo = document.getElementById('a2');
 var ddElThree = document.getElementById('a3');
 var ddElFour = document.getElementById('a4');
+var ddElFive = document.getElementById('a5');
+var ddElSix = document.getElementById('a6');
 
+//Is there anyway using another array to combine the section above with the section below?
+
+//This section defines the arrays that are made up of the DOM element placeholders
+var dlElements = [dlElOne, dlElTwo, dlElThree, dlElFour, dlElFive, dlElSix];
+var ddElements = [ddElOne, ddElTwo, ddElThree, ddElFour, ddElFive, ddElSix];
+
+//This is the initial prompt to gather the user's name
 var userName = prompt('Tell me your name.');
 
+//This is a counter for questions right and wrong
 var counterR = 0;
 var counterW = 0;
 
-var dlElements = [dlElOne, dlElTwo, dlElThree, dlElFour];
-var ddElements = [ddElOne, ddElTwo, ddElThree, ddElFour];
-
+//This is a section to define the array that contains the questions that make up my guessing game
 var questions = [
   'Hi ' + userName + '!Let\'s get started! Do you think I\'m a cat man?',
   'Of my two favorite cardinal sins, which do you think is my most favorite? Gluttony or Sloth?',
@@ -23,6 +34,7 @@ var questions = [
   'Let\'s try something a little easier. I\'m thinking of a number between 1 and 10. What number am I thinking of?'
 ];
 
+//This is a section to define the array that contains the correct answers for the gussing game
 var answersRight = [
   'Damn right I am. And vicious little buggers they are. Never turn your back on them I say!',
   'Trick question! They go hand in hand. You can\'t have gluttony without sloth. I can\'t at least!',
@@ -32,6 +44,7 @@ var answersRight = [
   7,
 ];
 
+//This is a section to define the array that contains the incorrect answers for the gussing game
 var answersWrong = [
   'HA! You obviously don\'t know the caliber of the man you\'re dealing with. Never trust a man without a cat.',
   'Trick question! They go hand in hand. You can\'t have gluttony without sloth. I can\'t at least!',
@@ -41,6 +54,7 @@ var answersWrong = [
 ];
 
 
+//This function when called will prompt the user with a question from the question array and based on the answer will display a unique response to the specified DOM element for either a correct or incorrect answer. It will also increment the counterR for correct answers or counterW for incorrect answers
 function game(questions, answersRight, answersWrong, dlElements, ddElements) {
   var userInput = prompt(questions).toLowerCase();
   console.log(userInput);
@@ -49,12 +63,13 @@ function game(questions, answersRight, answersWrong, dlElements, ddElements) {
     ddElements.textContent = answersRight;
     counterR++;
     } else {
-    dlElements.textContent = questions;  
+    dlElements.textContent = questions;
     ddElements.textContent = answersWrong;
     counterW++;
   }
 }
 
+//This section contains the function calls to begin the guessing game.
 game(questions[0], answersRight[0], answersWrong[0], dlElements[0], ddElements[0]);
 game(questions[1], answersRight[1], answersWrong[1], dlElements[1], ddElements[1]);
 game(questions[2], answersRight[2], answersWrong[2], dlElements[2], ddElements[2]);
