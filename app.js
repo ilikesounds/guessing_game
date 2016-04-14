@@ -1,27 +1,64 @@
-var userName = prompt("What is your name?");
-var pElOne = document.getElementById('a1');
-var pElTwo = document.getElementById('a2');
-var pElThree = document.getElementById('a3');
+var dlElOne = document.getElementById('q1');
+var dlElTwo = document.getElementById('q2');
+var dlElThree = document.getElementById('q3');
+var dlElFour = document.getElementById('q4');
+var ddElOne = document.getElementById('a1');
+var ddElTwo = document.getElementById('a2');
+var ddElThree = document.getElementById('a3');
+var ddElFour = document.getElementById('a4');
 
-var counter = 0;
+var userName = prompt('Tell me your name.');
 
-var els = [pElOne, pElTwo, pElThree];
+var counterR = 0;
+var counterW = 0;
 
-var questions [
-  'Do you think I am a cat man?',
-  'Of my two favorite cardinal sins, which one do you think is my favorite: gluttony or sloth?';
-  'Given what you\'ve learned about me so far, can you believe I did not get married until I was 35?';
+var dlElements = [dlElOne, dlElTwo, dlElThree, dlElFour];
+var ddElements = [ddElOne, ddElTwo, ddElThree, ddElFour];
+
+var questions = [
+  'Hi ' + userName + '!Let\'s get started! Do you think I\'m a cat man?',
+  'Of my two favorite cardinal sins, which do you think is my most favorite? Gluttony or Sloth?',
+  'Given what you\'ve learned about me so far, can you believe I didn\'t get married until I was 35?',
+  'I\'m thinking of a number between 1 and 100, what number am I thinking of?',
+  'Let\'s try something a little easier. I\'m thinking of a number between 1 and 10. What number am I thinking of?'
 ];
 
-var answersR [
-  'Damn right I am. And vicious littlee buggers they are. Never turn your back on them I say!',
-  'Trick question! They go hand in hand. You can\'t have gluttony without sloth. I can\'t at least.',
-  'I know! Right?! So crazy I wasn\'t snatched up sooner!',
+var answersRight = [
+  'Damn right I am. And vicious little buggers they are. Never turn your back on them I say!',
+  'Trick question! They go hand in hand. You can\'t have gluttony without sloth. I can\'t at least!',
+  'I know! Right?!? So crazy I wasn\'t snatched up sooner!',
+  37,
+  'Great guess! How\'d you get that on one try?',
+  7,
+];
+
+var answersWrong = [
+  'HA! You obviously don\'t know the caliber of the man you\'re dealing with. Never trust a man without a cat.',
+  'Trick question! They go hand in hand. You can\'t have gluttony without sloth. I can\'t at least!',
+  'Very funny. Try again funny person.',
+  'Sorry you guessed to low.',
+  'Sorry you guessed to high.',
 ];
 
 
+function game(questions, answersRight, answersWrong, dlElements, ddElements) {
+  var userInput = prompt(questions).toLowerCase();
+  console.log(userInput);
+  if (userInput === answersRight) {
+    dlElements.textContent = questions;
+    ddElements.textContent = answersRight;
+    counterR++;
+    } else {
+    dlElements.textContent = questions;  
+    ddElements.textContent = answersWrong;
+    counterW++;
+  }
+}
 
-
+game(questions[0], answersRight[0], answersWrong[0], dlElements[0], ddElements[0]);
+game(questions[1], answersRight[1], answersWrong[1], dlElements[1], ddElements[1]);
+game(questions[2], answersRight[2], answersWrong[2], dlElements[2], ddElements[2]);
+game(questions[3], answersRight[3], answersWrong[3], dlElements[3], ddElements[3]);
 // alert("Ahoy there " + userName + "! Where be my booty?");
 //
 // var playGame = prompt("Just kidding, you don't owe me anything. Would you like to play a game, yes or no?");
