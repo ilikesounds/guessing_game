@@ -22,7 +22,7 @@ var ddElements = [ddElOne, ddElTwo, ddElThree, ddElFour, ddElFive, ddElSix];
 var userName = prompt('Tell me your name.');
 
 //This is a counter for questions right and wrong
-var counterR = 0;
+var counter = 0;
 
 //This is a section to define the array that contains the questions that make up my guessing game
 var questions = [
@@ -35,9 +35,9 @@ var questions = [
 
 //This section dfines the array that contains the answers to the guessing game.
 var answers = [
-  'yes',
+  ['yes', 'y'],
   ['gluttony', 'sloth'],
-  'no',
+  ['no', 'n'],
   37,
   7,
 ];
@@ -47,7 +47,8 @@ var answersRight = [
   'Damn right I am. And vicious little buggers they are. Never turn your back on them I say!',
   'Trick question! They go hand in hand. You can\'t have gluttony without sloth. I can\'t at least!',
   'I know! Right?!? So crazy I wasn\'t snatched up sooner!',
-  'Great guess!',
+  '37! Great guess!',
+  '7! Great guess!',
 ];
 
 //This is a section to define the array that contains the incorrect answers responses for the gussing game
@@ -64,15 +65,14 @@ function gameText(questions, answers, answersRight, answersWrong, dlElements, dd
   var userInput = prompt(questions).toLowerCase();
   console.log(userInput);
   if (userInput === answers[0] || userInput === answers[1]) {
-    dlElements.textContent = questions;
-    ddElements.textContent = answersRight;
-    counterR++;
+    dlElements.textContent = 'Question: ' + questions;
+    ddElements.textContent = 'Correct Answer: ' + answersRight;
+    counter++;
   } else {
-    dlElements.textContent = questions;
-    ddElements.textContent = answersWrong;
+    dlElements.textContent = 'Question: ' + questions;
+    ddElements.textContent = 'Incorrect Answer: ' + answersWrong;
   }
-};
-
+}
 
 function gameNum(questions, answers, answersRight, answersWrong, dlElements, ddElements) {
   var userInput = parseInt(prompt(questions));
@@ -89,23 +89,29 @@ function gameNum(questions, answers, answersRight, answersWrong, dlElements, ddE
       userInput = parseInt(prompt(questions));
     }
   }
-  dlElements.textContent = questions;
-  ddElements.textContent = answersRight;
+  dlElements.textContent = 'Question: ' + questions;
+  ddElements.textContent = 'Answer' + answersRight;
   counter++;
   console.log(counter);
 };
 
+funtion counterR(dlElements) {
+  dlElements.textContent = 'You got ' + counter + ' questions correct!';
+}
+
 //This section contains the function calls to begin the guessing game.
 gameText(questions[0], answers[0], answersRight[0], answersWrong[0], dlElements[1], ddElements[1]);
-console.log(counterR);
+console.log(counter);
 gameText(questions[1], answers[1], answersRight[1], answersWrong[1], dlElements[2], ddElements[2]);
-console.log(counterR);
-gameText(questions[2], answers[2],  answersRight[2], answersWrong[2], dlElements[3], ddElements[3]);
-console.log(counterR);
-gameNum(questions[3], answers[3], answersRight[3], answersWrong[3], dlElements[4],ddElements[4]);
-console.log(counterR);
-gameNum(questions[4], answers[4], answersRight[3], answersWrong[3], dlElements[5],ddElements[5]);
-console.log(counterR);
+console.log(counter);
+// gameText(questions[2], answers[2],  answersRight[2], answersWrong[2], dlElements[3], ddElements[3]);
+// console.log(counterR);
+// gameNum(questions[3], answers[3], answersRight[3], answersWrong[3], dlElements[4],ddElements[4]);
+// console.log(counterR);
+// gameNum(questions[4], answers[4], answersRight[3], answersWrong[3], dlElements[5],ddElements[5]);
+// console.log(counterR);
+counterR(6);
+
 // alert("Ahoy there " + userName + "! Where be my booty?");
 //
 // var playGame = prompt("Just kidding, you don't owe me anything. Would you like to play a game, yes or no?");
