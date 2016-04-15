@@ -23,7 +23,6 @@ var userName = prompt('Tell me your name.');
 
 //This is a counter for questions right and wrong
 var counterR = 0;
-var counterW = 0;
 
 //This is a section to define the array that contains the questions that make up my guessing game
 var questions = [
@@ -37,11 +36,10 @@ var questions = [
 //This section dfines the array that contains the answers to the guessing game.
 var answers = [
   'yes',
-  'gluttony',
-  'sloth',
+  ['gluttony', 'sloth'],
   'no',
-  '37',
-  '7',
+  37,
+  7,
 ];
 
 //This is a section to define the array that contains the correct answers responses for the gussing game
@@ -49,8 +47,7 @@ var answersRight = [
   'Damn right I am. And vicious little buggers they are. Never turn your back on them I say!',
   'Trick question! They go hand in hand. You can\'t have gluttony without sloth. I can\'t at least!',
   'I know! Right?!? So crazy I wasn\'t snatched up sooner!',
-  'Great guess! How\'d you get that on one try?',
-  'Excellent guess',
+  'Great guess!',
 ];
 
 //This is a section to define the array that contains the incorrect answers responses for the gussing game
@@ -58,32 +55,57 @@ var answersWrong = [
   'HA! You obviously don\'t know the caliber of the man you\'re dealing with. Never trust a man without a cat.',
   'Trick question! They go hand in hand. You can\'t have gluttony without sloth. I can\'t at least!',
   'Very funny. Try again funny person.',
-  'Sorry you guessed to low.',
-  'Sorry you guessed to high.',
+  ['Sorry you guessed to low.', 'Sorry you guessed to high.',],
 ];
 
 
 //This function when called will prompt the user with a question from the question array and based on the answer will display a unique response to the specified DOM element for either a correct or incorrect answer. It will also increment the counterR for correct answers or counterW for incorrect answers
-function game(questions, answers, answersRight, answersWrong, dlElements, ddElements) {
+function gameText(questions, answers, answersRight, answersWrong, dlElements, ddElements) {
   var userInput = prompt(questions).toLowerCase();
   console.log(userInput);
-  if (userInput === answers) {
+  if (userInput === answers[0] || userInput === answers[1]) {
     dlElements.textContent = questions;
     ddElements.textContent = answersRight;
     counterR++;
-    } else {
+  } else {
     dlElements.textContent = questions;
     ddElements.textContent = answersWrong;
-    counterW++;
   }
-}
+};
+
+
+function gameNum(questions, answers, answersRight, answersWrong, dlElements, ddElements) {
+  var userInput = parseInt(prompt(questions));
+  console.log(typeof(userInput));
+  console.log(answers);
+  while (parseInt(userInput) !== answers) {
+    if (parseInt(userInput) < answers) {
+      dlElements.textContent = questions;
+      ddElements.textContent = answersWrong[0];
+      userInput = parseInt(prompt(questions));
+    } else if (parseInt(userInput) > answers) {
+      dlElements.textContent = questions;
+      ddElements.textContent = answersWrong[1];
+      userInput = parseInt(prompt(questions));
+    }
+  }
+  dlElements.textContent = questions;
+  ddElements.textContent = answersRight;
+  counter++;
+  console.log(counter);
+};
 
 //This section contains the function calls to begin the guessing game.
-game(questions[0], answers[0], answersRight[0], answersWrong[0], dlElements[0], ddElements[0]);
-game(questions[1], answers[1, 2], answersRight[1], answersWrong[1], dlElements[1], ddElements[1]);
-console.log(counterR, counterW);
-game(questions[2], answers[3],  answersRight[2], answersWrong[2], dlElements[2], ddElements[2]);
-game(questions[3], answers[4], answersRight[3], answersWrong[3], dlElements[3], ddElements[3]);
+gameText(questions[0], answers[0], answersRight[0], answersWrong[0], dlElements[1], ddElements[1]);
+console.log(counterR);
+gameText(questions[1], answers[1], answersRight[1], answersWrong[1], dlElements[2], ddElements[2]);
+console.log(counterR);
+gameText(questions[2], answers[2],  answersRight[2], answersWrong[2], dlElements[3], ddElements[3]);
+console.log(counterR);
+gameNum(questions[3], answers[3], answersRight[3], answersWrong[3], dlElements[4],ddElements[4]);
+console.log(counterR);
+gameNum(questions[4], answers[4], answersRight[3], answersWrong[3], dlElements[5],ddElements[5]);
+console.log(counterR);
 // alert("Ahoy there " + userName + "! Where be my booty?");
 //
 // var playGame = prompt("Just kidding, you don't owe me anything. Would you like to play a game, yes or no?");
@@ -150,6 +172,7 @@ game(questions[3], answers[4], answersRight[3], answersWrong[3], dlElements[3], 
 //       counter++
 //       console.log(counter);
 // }
+
 // else {
 //   alert("Awwwwwww, you're no fun.");
 // }
