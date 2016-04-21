@@ -2,70 +2,92 @@
 <html>
   <head>
     <title>JTorres Resume</title>
-    <link rel = 'stylesheet' type = 'text/css' href = 'index.css'>
+    <link rel = 'stylesheet' type = 'text/css' href = 'style.css'>
   </head>
-
   <body>
-    <div>
-      <section>
-        <h1 id = 'name'>Jeff Torres</h1>
-      </section>
+    <div class='headContainer'>
+      <header>
+        <h1 id='name'>Jeff Torres</h1>
+        <nav>
+          <ul class='navContainer'>
+            <li class='navList'><a href='index.html'>Home</a></li>
+            <li class='navList'><a href='#'>Bio</a></li>
+            <li class='navList'><a href='#'>Credentials</a></li>
+            <li class='navList'><a href='#'>Q &amp; A</a></li>
+            <li class='navList'><a href='#'>Footer</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+    <div class='bioContainer'>
       <!-- <img src="http://jimswoodencreations.com/comments/wp-content/uploads/2015/01/tn.old-salt-1-.jpg" /> -->
+      <h2 class='bioHead'>Biography:</h2>
+      <p id='bio'>As a wee lad Jeff rose to fame by slaying Moby Dick. Ahab, his captain at the time, reportedly said that he owed Jeff his life and he would be forever greatful. Sadly his whaling career was cut tragically short when he lodged a fish hook in his thumb and lost all stomach for the commercial whaling business. In the time since, he's been a professional cookie eater, a shiftless layabout and a man of leisure. These days he's occupying his time with sloth and gluttony, two of his favorite cardinal sins.</p>
     </div>
-    <div>
-      <section id = 'bioSec'>
-        <h2 class = 'secHead' id = 'bioHead'>Biography:</h2>
-        <p id = 'bio'>As a wee lad Jeff rose to fame by slaying Moby Dick. Ahab, his captain at the time, reportedly said that he owed Jeff his life and he would be forever greatful. Sadly his whaling career was cut tragically short when he lodged a fish hook in his thumb and lost all stomach for the commercial whaling business. In the time since, he's been a professional cookie eater, a shiftless layabout and a man of leisure. These days he's occupying his time with sloth and gluttony, two of his favorite cardinal sins.</p>
-      </section>
-    </div>
-    <div>
-      <section class = 'listSec' id = 'expSec'>
-        <h2 class = 'secHead' id = 'expHead'>Worldly Experience and the Like:</h2>
+    <div class='listContainer'>
+      <section class='expSec'>
+        <h2 class='expHead'>Worldly Experience and the Like:</h2>
         <ul>
-          <li class = 'listItem' id = 'expList'>Commercial Whaling Legend</li>
-          <li class = 'listItem' id = 'expList'>Pro Cookie Eater</li>
-          <li class = 'listItem' id = 'expList'>Shiftless Layabout</li>
-          <li class = 'listItem' id = 'expList'>Man of Leisure</li>
+          <li class='expList'>Commercial Whaling Legend</li>
+          <li class='expList'>Pro Cookie Eater</li>
+          <li class='expList'>Shiftless Layabout</li>
+          <li class='expList'>Man of Leisure</li>
+        </ul>
+      </section>
+      <section class='lrnSec'>
+        <h2 class='lrnHead'>Learnings:</h2>
+        <ul>
+          <li class='lrnList'>Hard Knocks</li>
+          <li class='lrnList'>Tough Love</li>
+          <li class='lrnList'>B.A., Marketting, Vasser, 2008 Summa Cum Laude</li>
+        </ul>
+      </section>
+      <section class='goalSec'>
+        <h2 class='goalHead'>Goals:</h2>
+        <ul>
+          <li class='goalList'>Crush it 24/7</li>
+          <li class='goalList'>World Peace</li>
+          <li class='goalList'>High Score on the Donkey Kong machine</li>
         </ul>
       </section>
     </div>
-    <div>
-      <section class = 'listSec' id = 'lrnSec'>
-        <h2 class = 'secHead' id = 'lrnHead'>Learnings:</h2>
-        <ul>
-          <li class = 'listItem' id = 'lrnList'>Hard Knocks</li>
-          <li class = 'listItem' id = 'lrnList'>Tough Love</li>
-          <li class = 'listItem' id = 'lrnList'>B.A., Marketting, Vasser, 2008 Summa Cum Laude</li>
-        </ul>
+    <div class='qaContainer'>
+      <section class='qaSec'>
+        <h2 class='qaHead'>A little Q &amp; A!</h2>
+        <p id='introState'></p>
+        <section id='q1'>
+          <p id='pq1'></p>
+          <img src='' class='image' id='imgPlace1' />
+          <p id='pa1'></p>
+        </section>
+        <section id='q2'>
+          <p id='pq2'></p>
+          <img src='' class='image' id='imgPlace2' />
+          <p id='pa2'></p>
+        </section>
+        <section id='q3'>
+          <p id='pq3'></p>
+          <img src='' class='image' id='imgPlace3' />
+          <p id='pa3'></p>
+        </section>
+        <section id='q4'>
+          <p id='pq4'></p>
+          <img src='' class='image' id='imgPlace4' />
+          <p id='pa4'></p>
+        </section>
+        <section id='q5'>
+          <p id='pq5'></p>
+          <img src='' class='image' id='imgPlace5' />
+          <p id='pa5'></p>
+        </section>
       </section>
     </div>
-    <div>
-      <section class = 'listSec' id = 'goalSec'>
-        <h2 class = 'secHead' id = 'goalHead'>Goals:</h2>
-        <ul>
-          <li class = 'listItem' id = 'goalList'>Crush it 24/7</li>
-          <li class = 'listItem' id = 'goalList'>World Peace</li>
-          <li class = 'listItem' id = 'goalList'>High Score on the Donkey Kong machine</li>
-        </ul>
-      </section>
+    <div class ='counterContainer'>
+      <p id='finalCount'></p>
     </div>
-    <div>
-      <section id = 'qaSec'>
-        <h2 class = 'secHead' id = 'qaHead'>A little Q &amp; A!</h2>
-        <p id = 'q1'></p>
-        <p id = 'a1'></p>
-        <p id = 'q2'></p>
-        <p id = 'a2'></p>
-        <p id = 'q3'></p>
-        <p id = 'a3'></p>
-        <p id = 'q4'></p>
-        <p id = 'a4'></p>
-        <p id = 'q5'></p>
-        <p id = 'a5'></p>
-        <p id = 'q6'></p>
-        <p id = 'q6'></p>
-      </section>
+    <div class = 'footContainer'>
+      <a href='https://github.com/codegal1/guessing-game' class='dLink'>Dee's Guessing Game</a>
     </div>
-    <script src="app.js" type="text/javascript"></script>
+   <script src="app.js" type="text/javascript"></script>
   </body>
 </html>
